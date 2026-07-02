@@ -1,0 +1,97 @@
+/* Pastikan body dan html penuh skrin */
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    overflow: hidden; /* Mencegah scroll pada level body */
+}
+
+/* Reset asas */
+* { box-sizing: border-box; }
+
+/* Struktur utama */
+.app { 
+    display: flex; 
+    height: 100vh; /* Mengambil 100% tinggi viewport */
+    width: 100%;
+    background: #f4f6f9;
+}
+
+/* Sidebar yang pasti sampai bawah */
+/* Sidebar yang padat */
+.sidebar { 
+    width: 200px; 
+    background: #1e3a5f; 
+    color: white; 
+    display: flex; 
+    flex-direction: column; 
+    flex-shrink: 0; 
+    height: 100vh; 
+    overflow-y: auto; /* Membenarkan scroll di dalam sidebar jika perlu */
+    padding: 10px 0; 
+}
+
+/* Menjadikan menu lebih padat */
+.nav-item { 
+    padding: 8px 20px; 
+    font-size: 13px; /* Kecilkan sedikit font untuk jimat ruang */
+    cursor: pointer; 
+    display: flex; 
+    align-items: center; 
+    gap: 10px; 
+}
+
+/* Pastikan topbar tidak terkeluar */
+.topbar { 
+    background: white; 
+    padding: 10px 20px; /* Kurangkan sedikit padding */
+    display: flex; 
+    align-items: center; 
+    border-bottom: 1px solid #e0e0e0; 
+}
+
+/* Pastikan butang menu rapat dengan sidebar */
+.btn-menu { 
+    margin-right: 15px; 
+}
+
+/* Main Content */
+.main { 
+    flex: 1; 
+    display: flex; 
+    flex-direction: column; 
+    overflow-y: auto; /* Scroll hanya pada content sebelah kanan */
+}
+
+/* Topbar */
+.topbar { 
+    background: white; 
+    padding: 15px 25px; 
+    display: flex; 
+    align-items: center; 
+    border-bottom: 1px solid var(--border); 
+}
+
+/* Butang menu: Beri margin kanan yang kecil sahaja supaya dia duduk tepi sidebar */
+.btn-menu { 
+    margin-right: 10px; /* Rapat dengan tulisan Dashboard */
+    padding: 8px 12px;
+}
+
+/* Penolak untuk butang kanan */
+.spacer { flex-grow: 1; }
+
+/* Grid statistik supaya tidak bertindih */
+.stats-container { 
+    display: grid; 
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); 
+    gap: 20px; 
+    margin-bottom: 25px; 
+}
+
+.ti-logout {
+    display: inline-block;
+    color: inherit; /* Mengikut warna teks butang */
+    font-size: 18px;
+    vertical-align: middle;
+}
