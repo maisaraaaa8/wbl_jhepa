@@ -16,6 +16,9 @@ return Application::configure(basePath: dirname(__DIR__))
             'supabase.auth' => \App\Http\Middleware\CheckSupabaseAuth::class,
             'role'          => \App\Http\Middleware\EnsureRole::class,
         ]);
+
+        // Percaya proxy Render supaya Laravel detect HTTPS dengan betul
+        $middleware->trustProxies(at: '*');
     })
     ->withExceptions(function (Exceptions $exceptions) {
         //
