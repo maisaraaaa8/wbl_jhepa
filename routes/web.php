@@ -35,7 +35,7 @@ Route::get('/debug-session', function () {
 // admin, readonly, pelajar, keluarga_angkat.
 Route::middleware(['supabase.auth'])->group(function () {
 
-    Route::get('/dashboard', [\App\Http\Controllers\DashboardController::class, 'index'])->name('dashboard');
+    Route::get('/dashboard', [\\App\\Http\\Controllers\\DashboardController::class, 'index'])->name('dashboard');
 
     // Profil — semua peranan urus profil sendiri
     Route::get('/profil',                 [ProfileController::class, 'index'])->name('profile.index');
@@ -148,8 +148,5 @@ Route::middleware(['supabase.auth'])->group(function () {
     });
 });
 
-// ── Logout ─────────────────────────────────────────────────────────────
-Route::match(['get', 'post'], '/logout', [App\Http\Controllers\Auth\AuthenticatedSessionController::class, 'destroy'])
-    ->name('logout');
-
 require __DIR__.'/auth.php';
+
